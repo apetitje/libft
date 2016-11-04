@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apetitje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:53:14 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 14:26:50 by apetitje         ###   ########.fr       */
+/*   Created: 2016/11/02 21:57:11 by apetitje          #+#    #+#             */
+/*   Updated: 2016/11/04 14:31:34 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+#include <stdlib.h>
+#include "libft.h"
+
+char	*ft_strdup(const char *s1)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
+	int		i;
+	char	*dst;
+
+	i = ft_strlen(s1);
+	if (!(dst = (char *) malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	dst = ft_strcpy(s1, dst);
+	return (dst);
 }

@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:53:14 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 14:26:50 by apetitje         ###   ########.fr       */
+/*   Created: 2016/11/04 14:33:46 by apetitje          #+#    #+#             */
+/*   Updated: 2016/11/04 15:51:08 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+#include "libft.h"
+
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		while (src[i] && i < len)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:53:14 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 14:26:50 by apetitje         ###   ########.fr       */
+/*   Created: 2016/11/04 14:52:15 by apetitje          #+#    #+#             */
+/*   Updated: 2016/11/04 15:50:55 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+#include "libft.h"
+
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
+	size_t	i;
+
+	i = ft_strlen(s1);
+	n = n + i;
+	while (*s2 && i < n)
+	{
+		s1[i] = *s2;
+		i++;
+		s2++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }

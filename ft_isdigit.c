@@ -6,11 +6,9 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 13:27:23 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 13:35:58 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/04 14:26:16 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isdigit(int c)
 {

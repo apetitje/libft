@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apetitje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:53:14 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 14:26:50 by apetitje         ###   ########.fr       */
+/*   Created: 2016/11/02 20:19:48 by apetitje          #+#    #+#             */
+/*   Updated: 2016/11/04 14:32:20 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+int		ft_strlen(const char *s)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
+	int		i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

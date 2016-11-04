@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:53:14 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 14:26:50 by apetitje         ###   ########.fr       */
+/*   Created: 2016/11/04 14:40:59 by apetitje          #+#    #+#             */
+/*   Updated: 2016/11/04 16:06:09 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_toupper(int c)
+#include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	else
-		return (c);
+	size_t		i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n)
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }

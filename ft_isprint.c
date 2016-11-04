@@ -6,11 +6,9 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 13:47:41 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 13:51:08 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/04 14:27:24 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isprint(int c)
 {

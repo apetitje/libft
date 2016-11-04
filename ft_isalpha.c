@@ -6,11 +6,9 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 13:03:56 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 13:17:07 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/04 14:26:06 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_isalpha(int c)
 {
