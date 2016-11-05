@@ -6,7 +6,7 @@
 /*   By: apetitje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 20:21:23 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 14:25:46 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 22:01:11 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ int		ft_strcmp(const char *s1, const char *s2)
 		s1++;
 		s2++;
 	}
-	return (*s1 - *s2);
+	return (*((unsigned char *)s1) - *((unsigned char *)s2));
 }

@@ -59,9 +59,7 @@ Test code:
 	exit(TEST_SUCCESS);
 
 
-ft_strstr:     [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [CRASH] [CRASH] [OK] [OK] 
-[fail]: your strstr does not work with basic input
-Test code:
+ft_strstr:     [OK] [TIMEOUT] [TIMEOUT] [OK] [TIMEOUT] [TIMEOUT] [FAILED] [OK] [OK] [TIMEOUT] [CRASH] [CRASH] [NO CRASH] [OK] Test code:
 	char *s1 = "MZIRIBMZIRIBMZP";
 	char *s2 = "MZIRIBMZP";
 	char *i1 = strstr(s1, s2);
@@ -71,9 +69,61 @@ Test code:
 		exit(TEST_SUCCESS);
 	exit(TEST_FAILED);
 
+Test code:
+	char *s2 = "FF";
+	char *s1 = "see F your F return FF now FF";
+	char *i1 = strstr(s1, s2);
+	char *i2 = ft_strstr(s1, s2);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+Test code:
+	char *s1 = "aaabbbaaabbb";
+	char *s2 = "abbaaab";
+	char *i1 = strstr(s1, s2);
+	char *i2 = ft_strstr(s1, s2);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+Test code:
+	char *s1 = "ã“ã‚“ã«ã¡ã¯";
+	char *s2 = "ã«ã¡";
+	char *i1 = strstr(s1, s2);
+	char *i2 = ft_strstr(s1, s2);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
+
+[fail]: your strstr does not work with empty strings
+Test code:
+	char *s1 = "";
+	char *s2 = "";
+	char *i1 = strstr(s1, s2);
+	char *i2 = ft_strstr(s1, s2);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
 Diffs:
-      strstr: |MZIRIBMZP|
+      strstr: ||
    ft_strstr: |(null)|
+Test code:
+	char *s1 = "oh no not the empty string !";
+	char *s2 = "";
+	char *i1 = strstr(s1, s2);
+	char *i2 = ft_strstr(s1, s2);
+
+	if (i1 == i2)
+		exit(TEST_SUCCESS);
+	exit(TEST_FAILED);
+
 
 [crash]: your strstr does not work with empty strings
 Test code:
@@ -96,6 +146,11 @@ Test code:
 	__builtin___strcpy_chk (s2, "is there a nyacat ?", __builtin_object_size (s2, 2 > 1 ? 1 : 0));
 	ft_strstr(s1, s2);
 	exit(TEST_SUCCESS);
+
+
+[no crash]: your strstr does not segfault when null parameter is sent
+Test code:
+	ft_strstr("fake", ((void *)0));
 
 
 ft_strnstr:    [OK] [OK] [FAILED] [OK] [OK] [OK] [CRASH] [CRASH] [CRASH] [OK] [OK] 
@@ -265,25 +320,7 @@ Diffs:
     striteri: |>verride this !|
  ft_striteri: |0123456789:;<=>|
 
-ft_strmap:     [FAILED] [FAILED] [FAILED] [OK] [OK] {not protected}
-[fail]: your strmap does not work
-Test code:
-	char *b = "override this !";
-	char b2[0xF0];
-	size_t size = strlen(b);
-
-	for (size_t i = 0; i < size; i++)
-		b2[i] = f_strmap(b[i]);
-	b2[size] = 0;
-	char *ret = ft_strmap(b, f_strmap);
-	if (!strcmp(b2, ret))
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-      strmap: |v}lyypkl'{opz'(°pÀâ£|
-   ft_strmap: |v}lyypkl'{opz'(|
-
+ft_strmap:     [OK] [FAILED] [FAILED] [OK] [OK] {not protected}
 [fail]: your strmap did not set \0 at the end of the string
 Test code:
 	char *b = "override this !";
@@ -323,32 +360,9 @@ Test code:
 
 Diffs:
       strmap: |v}lyypkl'{opz'(|
-   ft_strmap: |v}lyypkl'{opz'(°pÀâ£|
+   ft_strmap: |v}lyypkl'{opz'(p|
 
-ft_strmapi:    [OK] [FAILED] [FAILED] [OK] [OK] {not protected}
-[fail]: your strmapi does not malloc ?
-Test code:
-	char *b = "override this !";
-	char b2[0xF0];
-	size_t size = strlen(b);
-
-	for (size_t i = 0; i < size; i++)
-		b2[i] = f_strmapi(i, b[i]);
-	b2[size] = 0;
-	fd_to_buffer(1);
-	char *newstr = ft_strmapi(b, f_strmapi);
-	if (!strcmp(newstr, b2))
-		exit(TEST_SUCCESS);
-	free(newstr);
-	write(1, "", 1);
-	write(1, "", 1);
-	get_fd_buffer(1, ((void *)0), 0);
-	exit(TEST_FAILED);
-
-Diffs:
-     strmapi: |owguvnjl(}rt-/|
-  ft_strmapi: |owguvnjl(}rt-/°pÀâ£|
-
+ft_strmapi:    [OK] [OK] [FAILED] [OK] [OK] {not protected}
 [fail]: your strmapi did not set \0 at the end of the string
 Test code:
 	char *b = "override this !";
@@ -369,7 +383,7 @@ Diffs:
 
 ft_strequ:     [OK] [OK] [OK] [OK] {not protected}
 ft_strnequ:    [OK] [OK] [OK] [OK] {not protected}
-ft_strsub:     [OK] [OK] [OK] [OK] [FAILED] [OK] [FAILED] [OK] {not protected}
+ft_strsub:     [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] {not protected}
 [fail]: your strsub does not set \0 to the end of the string
 Test code:
 	char str[] = "i just want this part #############";
@@ -388,31 +402,12 @@ Test code:
 Diffs:
       strsub: |t want this part ###|
    ft_strsub: |t want this part ###A|
-  ft_strn|
-
-[fail]: your strsub does not work for a whole string
-Test code:
-	char *s = "all of this !";
-	size_t size = strlen(s);
-	char *ret = ft_strsub(s, 0, size);
-
-	if (!strcmp(s, ret))
-	{
-		free(ret);
-		exit(TEST_SUCCESS);
-	}
-	free(ret);
-	exit(TEST_FAILED);
-
-Diffs:
-      strsub: |all of this !|
-   ft_strsub: |all of this !|
 
 ft_strjoin:    [OK] [OK] [OK] [OK] [OK] {not protected}
-ft_strtrim:    [FAILED] [OK] [OK] [CRASH] [OK] [KO] [OK] [OK] [OK] {not protected}
+ft_strtrim:    [OK] [OK] [FAILED] [CRASH] [OK] [KO] [OK] [OK] [OK] {not protected}
 [fail]: your strtrim does not work with basic input
 Test code:
-	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+	char *s1 = "Hello \t  Please\n Trim me !";
 	char *s2 = "Hello \t  Please\n Trim me !";
 	char *ret = ft_strtrim(s1);
 
@@ -424,7 +419,7 @@ Diffs:
      strtrim: |Hello 	  Please
  Trim me !|
   ft_strtrim: |Hello 	  Please
- Trim me !ri: |0|
+ Trim me !;<=>|
 
 [crash]: your strtrim does not work with full blank input
 Test code:

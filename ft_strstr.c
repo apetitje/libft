@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:50:04 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 19:40:05 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 21:54:46 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strstr(const char *big, const char *little)
 			i++;
 		if (big[i] == little[j])
 		{
-			while (big[i] == little[j])
+			while (little[j] && big[i] == little[j])
 			{
 				i++;
 				j++;
