@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:57:23 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 17:32:18 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:59:10 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,14 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	c = (unsigned char)c;
-	while (i < n && *(src + i) != c)
+	while (i < n && *((unsigned char *)(src + i)) != (unsigned char)c)
 	{
-		*(dst + i) = *(src + i);
+		*((unsigned char *)(dst + i)) = *((unsigned char *)(src + i));
 		i++;
 	}
-	if (*(src + i) == c)
+	if (*((unsigned char *)(src + i)) == (unsigned char)c)
 	{
-		*(dst + i) = c;
+		*((unsigned char *)(dst + i)) = (unsigned char)c;
 		return (dst + i + 1);
 	}
 	else

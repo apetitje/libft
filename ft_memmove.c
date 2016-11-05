@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:04:11 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 17:22:37 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:56:10 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		ft_memcpy(dst, src, len);
 	else
 	{
-		while (i >= 0)
+		while (i + 1 > 0)
 		{
-			*(dst + i) = *(src + i);
+			*((unsigned char *)(dst + i)) = *((unsigned char *)(src + i));
 			i--;
 		}
 	}

@@ -6,11 +6,11 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:50:04 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 17:59:20 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:40:05 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h";
+#include "libft.h"
 
 char	*ft_strstr(const char *big, const char *little)
 {
@@ -19,8 +19,8 @@ char	*ft_strstr(const char *big, const char *little)
 
 	i = 0;
 	j = 0;
-	if (little[i] = '\0')
-		return (big);
+	if (little[i] == '\0')
+		return ((char *)big);
 	while (big[i] != '\0')
 	{
 		while (big[i] && little[j] && big[i] != little[j])
@@ -33,7 +33,7 @@ char	*ft_strstr(const char *big, const char *little)
 				j++;
 			}
 			if (little[j] == '\0')
-				return (big + i - j);
+				return ((char *)big + i - j);
 			else
 			{
 				i = i - j + 1;

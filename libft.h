@@ -6,7 +6,7 @@
 /*   By: apetitje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:18:37 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 18:21:34 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:26:36 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ void	*ft_memset(void *b, int c, size_t len);
 char	*ft_itoa(int n);
 void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 int		ft_atoi(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -71,6 +73,8 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);

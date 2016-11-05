@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 14:57:32 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 15:42:04 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:13:44 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putnbr(int n)
 {
 	unsigned int	absolute_nb;
-	char			number[10] = {0};
+	char			number[10];
 	int				range;
 
 	range = 0;

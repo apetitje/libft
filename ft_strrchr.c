@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:45:17 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 17:47:48 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:42:19 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@ char	*ft_strrchr(const char *s, int c)
 
 	len = ft_strlen(s);
 	c = (char)c;
-
 	s = s + len + 1;
-	while (len >= 0 && *s != c)
+	while (len + 1 > 0 && *s != c)
 	{
 		len--;
 		s--;
 	}
 	if (*s == c)
-		return (s);
+		return ((char *)s);
 	else
 		return (NULL);
 }

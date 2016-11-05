@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:55:00 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 19:11:48 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:34:50 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,17 @@ char		**ft_strsplit(char const *s, char c)
 	int		nb_words;
 	int		index;
 	int		tab_i;
-	
+
 	index = 0;
 	tab_i = 0;
 	nb_words = ft_count_words(s, c);
-	if(!(tab = (char **)malloc(sizeof(char *) * (nb_words + 1))))
+	if (!(tab = (char **)malloc(sizeof(char *) * (nb_words + 1))))
 		return (NULL);
 	tab[nb_words] = NULL;
-	while (i < nb_words)
+	while (tab_i < nb_words)
 	{
-		ft_fill_tab(tab[i], s, c, &index);
-		i++;
+		ft_fill_tab(tab[tab_i], s, c, &index);
+		tab_i++;
 	}
 	return (tab);
 }

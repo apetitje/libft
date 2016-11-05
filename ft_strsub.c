@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:35:55 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 18:41:10 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 19:15:38 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	size_t	index;
 
 	index = 0;
-	if(!(dst = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(dst = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	while (index < len)
 	{
