@@ -6,7 +6,7 @@
 /*   By: apetitje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:18:37 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 17:49:47 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 18:21:34 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,17 @@
 
 # include <string.h>
 
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void 	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
 char	*ft_strstr(const char *big, const char *little);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strchr(const char *s, int c);
