@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 23:45:03 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 23:49:20 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 14:09:35 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ char	*ft_strnew(size_t size)
 
 	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
 		return (NULL);
-	while (size >= 0)
+	while (size > 0)
 	{
 		str[size] = '\0';
 		size--;
 	}
+	str[size] = '\0';
 	return (str);
 }
