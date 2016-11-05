@@ -6,7 +6,7 @@
 /*   By: apetitje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:18:37 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 14:58:12 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 15:32:06 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <string.h>
 
+char	*ft_itoa(int n);
+void	ft_putendl(char const *s);
 void	ft_putnbr(int n);
 int		atoi(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
