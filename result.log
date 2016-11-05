@@ -59,215 +59,10 @@ Test code:
 	exit(TEST_SUCCESS);
 
 
-ft_strstr:     [OK] [TIMEOUT] [TIMEOUT] [OK] [TIMEOUT] [TIMEOUT] [FAILED] [OK] [OK] [TIMEOUT] [CRASH] [CRASH] [NO CRASH] [OK] Test code:
-	char *s1 = "MZIRIBMZIRIBMZP";
-	char *s2 = "MZIRIBMZP";
-	char *i1 = strstr(s1, s2);
-	char *i2 = ft_strstr(s1, s2);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Test code:
-	char *s2 = "FF";
-	char *s1 = "see F your F return FF now FF";
-	char *i1 = strstr(s1, s2);
-	char *i2 = ft_strstr(s1, s2);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Test code:
-	char *s1 = "aaabbbaaabbb";
-	char *s2 = "abbaaab";
-	char *i1 = strstr(s1, s2);
-	char *i2 = ft_strstr(s1, s2);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Test code:
-	char *s1 = "こんにちは";
-	char *s2 = "にち";
-	char *i1 = strstr(s1, s2);
-	char *i2 = ft_strstr(s1, s2);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-
-[fail]: your strstr does not work with empty strings
-Test code:
-	char *s1 = "";
-	char *s2 = "";
-	char *i1 = strstr(s1, s2);
-	char *i2 = ft_strstr(s1, s2);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-      strstr: ||
-   ft_strstr: |(null)|
-Test code:
-	char *s1 = "oh no not the empty string !";
-	char *s2 = "";
-	char *i1 = strstr(s1, s2);
-	char *i2 = ft_strstr(s1, s2);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-
-[crash]: your strstr does not work with empty strings
-Test code:
-	char *s1 = "AAAAAAAAAAAAA";
-	char *i1 = strstr(s1, s1);
-	char *i2 = ft_strstr(s1, s1);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-
-[crash]: your strstr crash cause it read too many bytes !
-Test code:
-	const size_t size = 20;
-	char *s1 = electric_alloc(size);
-	char *s2 = electric_alloc(size);
-
-	__builtin___strcpy_chk (s1, "is there a nyacat ?", __builtin_object_size (s1, 2 > 1 ? 1 : 0));
-	__builtin___strcpy_chk (s2, "is there a nyacat ?", __builtin_object_size (s2, 2 > 1 ? 1 : 0));
-	ft_strstr(s1, s2);
-	exit(TEST_SUCCESS);
-
-
-[no crash]: your strstr does not segfault when null parameter is sent
-Test code:
-	ft_strstr("fake", ((void *)0));
-
-
-ft_strnstr:    [OK] [OK] [FAILED] [OK] [OK] [OK] [CRASH] [CRASH] [CRASH] [OK] [OK] 
-[fail]: your strnstr does not work with basic input
-Test code:
-	char *s1 = "MZIRIBMZIRIBMZE123";
-	char *s2 = "MZIRIBMZE";
-	size_t max = strlen(s2);
-	char *i1 = strnstr(s1, s2, max);
-	char *i2 = ft_strnstr(s1, s2, max);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strnstr: |(null)|
-  ft_strnstr: |MZIRIBMZE123|
-
-[crash]: your strnstr does not work with empty strings
-Test code:
-	char *s1 = "AAAAAAAAAAAAA";
-	size_t max = strlen(s1);
-	char *i1 = strnstr(s1, s1, max);
-	char *i2 = ft_strnstr(s1, s1, max);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-
-[crash]: your strnstr does not work with empty strings
-Test code:
-	char *s1 = "A";
-	char *i1 = strnstr(s1, s1, 2);
-	char *i2 = ft_strnstr(s1, s1, 2);
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-
-[crash]: your strnstr crash cause it read too many bytes !
-Test code:
-	const size_t size = 20;
-	char *s1 = electric_alloc(size);
-	char *s2 = electric_alloc(size);
-
-	__builtin___strcpy_chk (s1, "is there a nyacat ?", __builtin_object_size (s1, 2 > 1 ? 1 : 0));
-	__builtin___strcpy_chk (s2, "is there a nyacat ?", __builtin_object_size (s2, 2 > 1 ? 1 : 0));
-	ft_strnstr(s1, s2, size);
-	exit(TEST_SUCCESS);
-
-
-ft_strcmp:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [FAILED] [OK] [OK] [OK] 
-[fail]: your strcmp does not cast in unsigned the diff
-Test code:
-	char *s1 = "\0";
-	char *s2 = "\200";
-	int i1 = ((strcmp(s1, s2) > 0) ? 1 : ((strcmp(s1, s2) < 0) ? -1 : 0));
-	int i2 = ((ft_strcmp(s1, s2) > 0) ? 1 : ((ft_strcmp(s1, s2) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-      strcmp: |-1|
-   ft_strcmp: |1|
-
-[fail]: your strcmp does not work with non ascii chars
-Test code:
-	char *s1 = "\x12\xff\x65\x12\xbd\xde\xad";
-	char *s2 = "\x12\x02";
-	int i1 = ((strcmp(s1, s2) > 0) ? 1 : ((strcmp(s1, s2) < 0) ? -1 : 0));
-	int i2 = ((ft_strcmp(s1, s2) > 0) ? 1 : ((ft_strcmp(s1, s2) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-      strcmp: |1|
-   ft_strcmp: |-1|
-
-ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [FAILED] [OK] [OK] [OK] 
-[fail]: your strncmp does not cast in unsigned char the diff
-Test code:
-	char *s1 = "\200";
-	char *s2 = "\0";
-	int i1 = ((strncmp(s1, s2, 1) > 0) ? 1 : ((strncmp(s1, s2, 1) < 0) ? -1 : 0));
-	int i2 = ((ft_strncmp(s1, s2, 1) > 0) ? 1 : ((ft_strncmp(s1, s2, 1) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strncmp: |1|
-  ft_strncmp: |-1|
-
-[fail]: your strncmp does not work with non ascii chars
-Test code:
-	char *s1 = "\x12\xff\x65\x12\xbd\xde\xad";
-	char *s2 = "\x12\x02";
-	size_t size = 6;
-	int i1 = ((strncmp(s1, s2, size) > 0) ? 1 : ((strncmp(s1, s2, size) < 0) ? -1 : 0));
-	int i2 = ((ft_strncmp(s1, s2, size) > 0) ? 1 : ((ft_strncmp(s1, s2, size) < 0) ? -1 : 0));
-
-	if (i1 == i2)
-		exit(TEST_SUCCESS);
-	exit(TEST_FAILED);
-
-Diffs:
-     strncmp: |1|
-  ft_strncmp: |-1|
-
+ft_strstr:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strnstr:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strcmp:     [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
+ft_strncmp:    [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_atoi:       [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] 
 ft_isalpha:    [OK] 
 ft_isdigit:    [OK] 
@@ -320,7 +115,7 @@ Diffs:
     striteri: |>verride this !|
  ft_striteri: |0123456789:;<=>|
 
-ft_strmap:     [OK] [FAILED] [FAILED] [OK] [OK] {not protected}
+ft_strmap:     [OK] [FAILED] [OK] [OK] [OK] {not protected}
 [fail]: your strmap did not set \0 at the end of the string
 Test code:
 	char *b = "override this !";
@@ -338,29 +133,6 @@ Test code:
 Diffs:
       strmap: |v}lyypkl'{opz'(|
    ft_strmap: |v}lyypkl'{opz'(A|
-
-[fail]: your strmap does not malloc ?
-Test code:
-	char *b = "override this !";
-	char b2[0xF0];
-	size_t size = strlen(b);
-
-	for (size_t i = 0; i < size; i++)
-		b2[i] = f_strmap(b[i]);
-	b2[size] = 0;
-	fd_to_buffer(1);
-	char *newstr = ft_strmap(b, f_strmap);
-	if (!strcmp(newstr, b2))
-		exit(TEST_SUCCESS);
-	free(newstr);
-	write(1, "", 1);
-	write(1, "", 1);
-	get_fd_buffer(1, ((void *)0), 0);
-	exit(TEST_FAILED);
-
-Diffs:
-      strmap: |v}lyypkl'{opz'(|
-   ft_strmap: |v}lyypkl'{opz'(p|
 
 ft_strmapi:    [OK] [OK] [FAILED] [OK] [OK] {not protected}
 [fail]: your strmapi did not set \0 at the end of the string
@@ -404,10 +176,10 @@ Diffs:
    ft_strsub: |t want this part ###A|
 
 ft_strjoin:    [OK] [OK] [OK] [OK] [OK] {not protected}
-ft_strtrim:    [OK] [OK] [FAILED] [CRASH] [OK] [KO] [OK] [OK] [OK] {not protected}
+ft_strtrim:    [FAILED] [OK] [OK] [CRASH] [OK] [KO] [OK] [OK] [OK] {not protected}
 [fail]: your strtrim does not work with basic input
 Test code:
-	char *s1 = "Hello \t  Please\n Trim me !";
+	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
 	char *s2 = "Hello \t  Please\n Trim me !";
 	char *ret = ft_strtrim(s1);
 
@@ -419,7 +191,7 @@ Diffs:
      strtrim: |Hello 	  Please
  Trim me !|
   ft_strtrim: |Hello 	  Please
- Trim me !;<=>|
+ Trim me !ri: |0|
 
 [crash]: your strtrim does not work with full blank input
 Test code:
