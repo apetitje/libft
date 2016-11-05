@@ -6,14 +6,12 @@
 /*   By: apetitje <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:18:37 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 23:51:58 by                  ###   ########.fr       */
+/*   Updated: 2016/11/05 14:05:25 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <stddef.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);

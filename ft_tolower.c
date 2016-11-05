@@ -6,11 +6,9 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 13:53:14 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 14:18:33 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 14:04:41 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int		ft_tolower(int c)
 {

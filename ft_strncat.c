@@ -6,11 +6,12 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:52:15 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/04 15:50:55 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/05 14:03:23 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
