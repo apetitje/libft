@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 19:20:52 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 19:22:28 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/06 15:19:04 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s)
-		write(fd, s++, 1);
+	if (s && fd != -1)
+	{
+		while (*s)
+			write(fd, s++, 1);
+	}
 }

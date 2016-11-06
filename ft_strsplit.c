@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:55:00 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 19:34:50 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/06 15:25:33 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,31 @@ static int	ft_count_words(char const *s, char c)
 	nb_words = 0;
 	while (s[i])
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
-		nb_words++;
-		while (s[i] != c)
+		if (s[i])
+			nb_words++;
+		while (s[i] && s[i] != c)
 			i++;
 	}
 	return (nb_words);
+}
+
+static int	ft_word_len(char const *str, int index, char c)
+{
+	int		i;
+	int		len;
+
+	i = 0;
+	len = 0;
+	while (str[index] && str[index] == c)
+		index++;
+	while (str[index] && str[index] != c)
+	{
+		index++;
+		len++;
+	}
+	return (len);
 }
 
 static void	ft_fill_tab(char *tab, char const *s, char c, int *index)
@@ -36,9 +54,9 @@ static void	ft_fill_tab(char *tab, char const *s, char c, int *index)
 	int		i;
 
 	i = 0;
-	while (s[*index] == c)
+	while (s[*index] && s[*index] == c)
 		(*index)++;
-	while (s[*index] != c)
+	while (s[*index] && s[*index] != c)
 	{
 		tab[i] = s[*index];
 		(*index)++;
@@ -53,15 +71,21 @@ char		**ft_strsplit(char const *s, char c)
 	int		nb_words;
 	int		index;
 	int		tab_i;
+	int		word_len;
 
 	index = 0;
 	tab_i = 0;
+	if (!s)
+		return (NULL);
 	nb_words = ft_count_words(s, c);
 	if (!(tab = (char **)malloc(sizeof(char *) * (nb_words + 1))))
 		return (NULL);
 	tab[nb_words] = NULL;
 	while (tab_i < nb_words)
 	{
+		word_len = (ft_word_len(s, index, c));
+		if (!(tab[tab_i] = (char *)malloc(sizeof(char) * (word_len + 1))))
+			return (NULL);
 		ft_fill_tab(tab[tab_i], s, c, &index);
 		tab_i++;
 	}

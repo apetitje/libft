@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:33:36 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 19:15:04 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/06 15:47:34 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
+	if (!s1 || !s2)
+		return (-1);
 	while (*s1 && *s2 && n > 0 && *s1 == *s2)
 	{
 		s1++;

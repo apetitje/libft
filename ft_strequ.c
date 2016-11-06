@@ -6,12 +6,14 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:31:36 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 18:33:20 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/06 15:45:34 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strequ(char const *s1, char const *s2)
 {
+	if (!s1 || !s2)
+		return (-1);
 	while (*s1 && *s2 && *s1 == *s2)
 	{
 		s1++;

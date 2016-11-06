@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:30:10 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 19:37:34 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/06 15:25:08 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
 	if (!(s2 = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
@@ -28,5 +30,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		s2[i] = f(i, s[i]);
 		i++;
 	}
+	s2[i] = '\0';
 	return (s2);
 }
