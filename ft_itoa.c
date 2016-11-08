@@ -6,12 +6,11 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 15:31:15 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/08 18:33:07 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 20:58:17 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 static int	ft_find_range(int n, int *is_neg, unsigned int absolute_nb,
 		unsigned int *nb_cpy)

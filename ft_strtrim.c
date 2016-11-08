@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:45:04 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/06 15:44:06 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 21:06:34 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	ft_new_len(int *ind, int *end, char const *s)
 		(*ind)++;
 	while (s[*end] && (s[*end] == ' ' || s[*end] == '\n' || s[*end] == '\t'))
 		(*end)--;
-	new_len = *end - *ind;
+	new_len = *end - *ind + 1;
 	(*ind)--;
 	return (new_len);
 }

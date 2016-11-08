@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 14:33:46 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/05 21:23:37 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 20:47:37 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 
 	i = 0;
 	if (len == 0)
-		return (NULL);
+		return (dst);
 	while (src[i] && i < len)
 	{
 		dst[i] = src[i];

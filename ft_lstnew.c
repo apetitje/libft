@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 10:21:52 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/08 11:10:56 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 21:10:45 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	if (!content)
 	{
 		lst->content = NULL;
-		lst-> content_size = 0;
+		lst->content_size = 0;
 	}
 	else
 	{
