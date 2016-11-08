@@ -6,13 +6,13 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:23:00 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/06 15:22:31 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 16:14:34 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (s)
+	if (s && f)
 		while (*s)
 		{
 			f(s);

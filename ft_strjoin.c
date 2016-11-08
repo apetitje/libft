@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:40:14 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/06 15:51:43 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 16:16:22 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	total_len;
 	char	*new_str;
 
+	if (!s1 && !s2)
+		return (NULL);
 	if (!s1)
 		new_str = ft_strdup(s2);
 	else if (!s2)

@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 17:28:15 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/06 15:27:26 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 15:52:40 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (n > 0 && *((unsigned char *)s) && *((unsigned char *)s)
-			!= (unsigned char)c)
+	unsigned char *a;
+
+	a = (unsigned char *)s;
+	while (n)
 	{
-		s++;
+		if (*a == (unsigned char)c)
+			return (a);
+		a++;
 		n--;
 	}
-	if (*((unsigned char *)s) == (unsigned char)c)
-		return ((void *)s);
-	else
-		return (NULL);
+	return (NULL);
 }

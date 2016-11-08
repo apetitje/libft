@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 17:34:00 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/08 15:58:34 by apetitje         ###   ########.fr       */
+/*   Created: 2016/11/08 10:52:34 by apetitje          #+#    #+#             */
+/*   Updated: 2016/11/08 14:59:32 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	unsigned char *a;
-	unsigned char *b;
-
-	a = (unsigned char *)s1;
-	b = (unsigned char *)s2;
-	while (n)
+	if (lst)
 	{
-		if (*a != *b)
-			return (*a - *b);
-		a++;
-		b++;
-		n--;
+		while (lst != NULL)
+		{
+			(*f)(lst);
+			lst = lst->next;
+		}
 	}
-	return (0);
 }

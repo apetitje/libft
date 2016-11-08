@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/05 17:34:00 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/08 15:58:34 by apetitje         ###   ########.fr       */
+/*   Created: 2016/11/08 10:56:20 by apetitje          #+#    #+#             */
+/*   Updated: 2016/11/08 15:00:36 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	unsigned char *a;
-	unsigned char *b;
 
-	a = (unsigned char *)s1;
-	b = (unsigned char *)s2;
-	while (n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+{
+	t_list	*new_lst;
+	t_list	**end_lst;
+
+	new_lst = NULL;
+	end_lst = NULL;
+	if (lst)
 	{
-		if (*a != *b)
-			return (*a - *b);
-		a++;
-		b++;
-		n--;
+		new_lst = f(lst);
+		if (!new_lst)
+			return (NULL);
+		lst = lst->next;
+		end_lst = &(new_lst->next);
+		while (lst != NULL)
+		{
+			*end_lst = f(lst);
+			if (!(*end_lst))
+				return (NULL);
+			end_lst = &((*end_lst)->next);
+			lst = lst->next;
+		}
 	}
-	return (0);
+	return (new_lst);
 }

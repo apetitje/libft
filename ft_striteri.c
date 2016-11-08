@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:24:18 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/06 15:23:52 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 16:15:17 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int		i;
 
 	i = 0;
-	if (s)
+	if (s && f)
 		while (*s)
 		{
 			f(i, s);
