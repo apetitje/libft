@@ -6,7 +6,7 @@
 /*   By: apetitje <apetitje@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 18:45:04 by apetitje          #+#    #+#             */
-/*   Updated: 2016/11/08 21:06:34 by apetitje         ###   ########.fr       */
+/*   Updated: 2016/11/08 21:31:49 by apetitje         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ char		*ft_strtrim(char const *s)
 	if (new_len < 0)
 		new_len = 0;
 	if (new_len == len)
-		return ((char *)s);
+	{
+		trimed_s = ft_strdup(s);
+		return (trimed_s);
+	}
 	if (!(trimed_s = (char *)malloc(sizeof(char) * (new_len + 1))))
 		return (NULL);
 	len = 0;
